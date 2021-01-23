@@ -1,4 +1,3 @@
-
 ## Install
 
 First, clone the repo via git and install dependencies:
@@ -25,10 +24,6 @@ To package apps for the local platform:
 yarn package
 ```
 
-## Docs
+## Credits
 
-See our [docs and guides here](https://electron-react-boilerplate.js.org/docs/installation)
-
-## License
-
-[Electron React Boilerplate]: https://github.com/electron-react-boilerplate
+Boilerplate template for this project: https://electron-react-boilerplate.js.org
