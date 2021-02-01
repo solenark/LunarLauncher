@@ -2,48 +2,84 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 
 body {
   position: relative;
   color: white;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
-  font-family: 'Noto Sans JP', sans-serif;
+  background: url('../assets/csel_bg00.png');
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: 100%;
+  background-position-y: 35%;
+  background-blend-mode: multiply;
+  font-family: 'Roboto', sans-serif;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-h2 {
-  margin: 0;
-  font-size: 2.25rem;
-  font-weight: bold;
-  letter-spacing: -0.025em;
-  color: #fff;
+.Menu-title {
+  margin: 0 200px;
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-gap: 20px;
 }
 
 button {
-  background-color: white;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  filter: saturate(1.2);
+  width: 300px;
+  height: 105px;
+  padding: 20px 40px;
   border: none;
+  outline: none;
   appearance: none;
-  font-size: 1.3rem;
+  font-size: 24px;
   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
     0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: transform ease-in 0.1s;
+  transition: ease-in 0.1s;
+  text-transform: uppercase;
+  text-align: right;
+  cursor: pointer;
 }
 
 button:hover {
-  transform: scale(1.1);
+  filter: hue-rotate(220deg);
+}
+
+.Netplay {
+  background: url('../assets/buttons/title/netplay-button.png');
+}
+
+.Offline {
+  background: url('../assets/buttons/title/offline-button.png');
+}
+
+.Spectate {
+  background: url('../assets/buttons/title/spectate-button.png');
+}
+
+.Replays {
+  background: url('../assets/buttons/title/replays-button.png');
+  filter: grayscale(1);
+}
+
+.Replays:hover {
+  filter: grayscale(1);
+  cursor: initial;
+}
+
+.Controls {
+  background: url('../assets/buttons/title/controls-button.png');
+}
+
+.Settings {
+  background: url('../assets/buttons/title/settings-button.png');
 }
 
 p {
@@ -52,18 +88,6 @@ p {
 
 li {
   list-style: none;
-}
-
-a {
-  color: white;
-  opacity: 0.75;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .Hello {
