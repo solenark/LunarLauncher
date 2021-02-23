@@ -5,21 +5,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+:root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 1024px;
+  height: 720px;
+}
 
 body {
   position: relative;
   color: white;
-  height: 100vh;
+
   background: url('../assets/csel_bg00.png');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: 100%;
   background-position-y: 35%;
   background-blend-mode: multiply;
   font-family: 'Roboto', sans-serif;
-  overflow-y: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+
+  margin: 0;
 }
 
 .Menu-title {
@@ -67,6 +76,7 @@ button:hover {
 .Replays {
   background: url('../assets/buttons/title/replays-button.png');
   filter: grayscale(1);
+  cursor: initial;
 }
 
 .Replays:hover {
@@ -90,9 +100,41 @@ li {
   list-style: none;
 }
 
-.Hello {
+.Info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+  flex-direction: column;
+  justify-self: end;
+  height: 100%;
+  font-weight: 100;
+}
+
+.Info h3 {
+  z-index: 0;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: -10px;
+}
+
+.Text {
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.7);
+  padding: 8px 0;
+  margin: 0;
+
+}
+
+.Text p {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 0;
+  font-family: 'Noto serif', serif;
+}
+
+.Info h3, .Info p {
+  padding-left: 40px;
 }

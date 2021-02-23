@@ -1,12 +1,14 @@
-import React from 'react';
+import { info } from 'electron-log';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Hello = () => {
+
   return (
-    <div>
+    <Fragment>
       <div className="Hello">
         <div className="Menu-title">
-          <button type="button" className="Netplay">
+          <button type="button" className="Netplay" onMouseEnter={() => info(0)}>
             Netplay
           </button>
           <button type="button" className="Offline">
@@ -26,7 +28,7 @@ const Hello = () => {
           </button>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
