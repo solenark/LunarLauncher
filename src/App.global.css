@@ -7,11 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 
-:root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+@viewport {
   width: 1024px;
   height: 720px;
 }
@@ -19,20 +15,47 @@
 body {
   position: relative;
   color: white;
-
   background: url('../assets/csel_bg00.png');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: 100%;
   background-position-y: 35%;
   background-blend-mode: multiply;
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-
   margin: 0;
+  padding: 0;
+  width: 1024px;
+  height: 720px;
+  overflow: hidden;
+}
+
+.Hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TopBar {
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.7);
+  padding: 5px 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #bb27ff, #F90000);
+  border-image-slice: 1;
+}
+
+.TopBar h1 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .Menu-title {
-  margin: 0 200px;
+  margin: 80px auto;
   display: grid;
   grid-template-columns: 300px 300px;
   grid-gap: 20px;
@@ -104,7 +127,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-self: end;
-  height: 100%;
+  width: 100%;
   font-weight: 100;
 }
 
@@ -112,7 +135,7 @@ li {
   z-index: 0;
   font-style: italic;
   font-weight: 500;
-  margin: 0;
+  margin: 0 40px;
   margin-bottom: -10px;
 }
 
@@ -127,14 +150,10 @@ li {
 .Text p {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
-  height: 100%;
+  height: 26px;
   margin: 0;
   font-size: 16px;
   font-weight: normal;
-  padding: 10px 0;
+  padding: 10px 40px;
   font-family: 'Noto serif', serif;
-}
-
-.Info h3, .Info p {
-  padding-left: 40px;
 }
