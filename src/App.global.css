@@ -38,10 +38,11 @@ body {
 .TopBar {
   width: 100%;
   background-color:rgba(0, 0, 0, 0.7);
-  padding: 5px 40px;
+  padding: 5px 20px;
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(to right, #bb27ff, #F90000);
@@ -54,8 +55,17 @@ body {
   text-transform: uppercase;
 }
 
+.Top-menu ul {
+  display: flex;
+  font-size: 14px;
+}
+
+.Top-menu ul li {
+  margin: 0 20px;
+}
+
 .Menu-title {
-  margin: 80px auto;
+  margin: 70px auto;
   display: grid;
   grid-template-columns: 300px 300px;
   grid-gap: 20px;
@@ -132,13 +142,13 @@ li {
   z-index: 0;
   font-style: italic;
   font-weight: 500;
-  margin: 0 40px;
+  margin: 0 20px;
   margin-bottom: -10px;
 }
 
 .Text {
   height: 100%;
-  background-color:rgba(0, 0, 0, 0.7);
+  background-color:rgba(0, 0, 0, 0.5);
   padding: 8px 0;
   margin: 0;
 
@@ -151,6 +161,6 @@ li {
   margin: 0;
   font-size: 16px;
   font-weight: normal;
-  padding: 10px 40px;
+  padding: 10px 20px;
   font-family: 'Noto serif', serif;
 }

@@ -20,6 +20,12 @@ const Hello = () => {
       <div className="Hello">
         <div className="TopBar">
           <h1>Lunar Launcher</h1>  
+          <div className="Top-menu">
+            <ul>
+              <li>Important links</li>
+              <li>Login</li>
+            </ul>
+          </div>
         </div>
         <div className="Menu-title">
           <button type="button" className="Netplay" onMouseEnter={() => setMessage(infos[0])} onMouseLeave={() => setMessage("")}>
