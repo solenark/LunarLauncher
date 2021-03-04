@@ -1,6 +1,6 @@
 //import { info } from 'electron-log';
-import React, { Fragment } from 'react';
-import { useState } from 'react';
+import React, { Fragment, useState } from 'react';
+import { Dropdown, DropdownButton, Modal, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Hello = () => {
@@ -11,9 +11,13 @@ const Hello = () => {
     "Play versus CPU/Player, start trainning mode or run a tournament.",
     "Watch a match in progress.",
     "Rewatch matchs saved in your computer or acess Melty.games repository.",
-    "Select the controller/s and configure it/them.",
+    "Select and configure the controller/s.",
     "User’s general preferences for the Lunar launcher."
   ];
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <Fragment>
@@ -22,8 +26,40 @@ const Hello = () => {
           <h1>Lunar Launcher</h1>  
           <div className="Top-menu">
             <ul>
-              <li>Important links</li>
-              <li>Login</li>
+              <li>
+                <DropdownButton
+                  menuAlign="right"
+                  title="Important links"
+                  id="dropdown-menu-align-right"
+                >
+                  <Dropdown.Item eventKey="1">Mizuumi</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Melty.Games</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Melty Bits</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Header>Discord servers</Dropdown.Header>
+                  <Dropdown.Item eventKey="3">Melty Blood</Dropdown.Item>
+                  <Dropdown.Item eventKey="4">Melty Brasil</Dropdown.Item>
+                  <Dropdown.Item eventKey="5">MeltySud</Dropdown.Item>
+                </DropdownButton>
+              </li>
+              <li>
+                <Button variant="primary" onClick={handleShow}>
+                  Login
+                </Button>
+
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Login</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <input type="text" name="username" value="Username"></input>
+                    <input type="text" name="password" value="Password"></input>
+                  </Modal.Body>
+                  <Modal.Footer>
+
+                  </Modal.Footer>
+                </Modal>
+              </li>
             </ul>
           </div>
         </div>
