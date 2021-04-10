@@ -1,18 +1,17 @@
-//import { info } from 'electron-log';
 import React, { Fragment, useState } from 'react';
 import { Dropdown, DropdownButton, Modal, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Hello = () => {
  
-  const [message, setMessage] = useState("");
+  const [message,setMessage] = useState('');
   const infos = [
-    "Play against human opponents over the network or create a lobby room.", 
-    "Play versus CPU/Player, start trainning mode or run a tournament.",
-    "Watch a match in progress.",
-    "Rewatch matchs saved in your computer or acess Melty.games repository.",
-    "Select and configure the controller/s.",
-    "User’s general preferences for the Lunar launcher."
+    'Play against human opponents over the network or create a lobby room.', 
+    'Play versus CPU/Player, start trainning mode or run a tournament.',
+    'Watch a match in progress.',
+    'Rewatch matchs saved in your computer or acess Melty.games repository.',
+    'Select and configure the controller/s.',
+    'User’s general preferences for the Lunar launcher.'
   ];
 
   const [show, setShow] = useState(false);
@@ -53,13 +52,13 @@ const Hello = () => {
                   </Modal.Header>
                   <Modal.Body>
                     <form>
-                      <input type="text" name="username" value="Username"></input>
-                      <input type="text" name="password" value="Password"></input>
+                      <input type="text" name="username" placeholder="Username"></input>
+                      <input type="text" name="password" placeholder="Password"></input>
                     </form>
                   </Modal.Body>
                   <Modal.Footer>
-                      <button type="button">Sign in</button>
-                      <button type="button">Discord</button>
+                      <button type="submit">Sign in</button>
+                      <button type="submit">Sign in with Discord</button>
                   </Modal.Footer>
                 </Modal>
               </li>
@@ -68,7 +67,7 @@ const Hello = () => {
         </div>
         <div className="Menu-title">
           <button type="button" className="Netplay" onMouseEnter={() => setMessage(infos[0])} onMouseLeave={() => setMessage("")}>
-            Netplay
+            Online
           </button>
           <button type="button" className="Offline" onMouseEnter={() => setMessage(infos[1])} onMouseLeave={() => setMessage("")}>
             Offline
