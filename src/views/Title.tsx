@@ -19,7 +19,7 @@ const Title = () => {
     <Fragment>
       <div className="Hello">
         <Topbar/>  
-        <div className="Menu-title">
+        <div className="Menu">
           <button type="button" className="Netplay" onMouseEnter={() => setMessage(infos[0])} onMouseLeave={() => setMessage("")}>
             Online
           </button>
@@ -31,7 +31,7 @@ const Title = () => {
           <button type="button" className="Spectate" onMouseEnter={() => setMessage(infos[2])} onMouseLeave={() => setMessage("")}>
             Spectate
           </button>
-          <button type="button" className="Replays" onMouseEnter={() => setMessage(infos[3])} onMouseLeave={() => setMessage("")}>
+          <button type="button" className="Replays Disabled" onMouseEnter={() => setMessage(infos[3])} onMouseLeave={() => setMessage("")}>
             Replays
           </button>
           <button type="button" className="Controls" onMouseEnter={() => setMessage(infos[4])} onMouseLeave={() => setMessage("")}>

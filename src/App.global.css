@@ -24,18 +24,23 @@ body {
   padding: 0;
   height: 720px;
   overflow: hidden;
+  cursor: default;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .Hello {
-  display: flex;
-  justify-content: center;
-  margin-top: 130px;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 80px;  
 }
 
 .TopBar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background-color:rgba(0, 0, 0, 0.7);
   padding: 0 20px;
@@ -54,6 +59,15 @@ body {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.Top-menu {
+  font-weight: 400;
+  color: white;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
 }
 
 .Top-menu ul {
@@ -122,15 +136,39 @@ body {
   font-weight: 400;
   text-transform: none;
   padding: 0;
+  color: #fff;
 }
 
-.Menu-title {
+.Menu {
   display: grid;
   grid-template-columns: 300px 300px;
   grid-gap: 20px;
+  align-self: center;
+  margin: 0 auto;
 }
 
-button {
+.Page-title {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}
+
+.Page-title button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.Page-title h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.Menu button {
   font-weight: bold;
   color: white;
   filter: saturate(1.2);
@@ -141,17 +179,15 @@ button {
   outline: none;
   appearance: none;
   font-size: 24px;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  /*box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);*/
   transition: ease-in 0.1s;
   text-transform: uppercase;
   text-align: right;
   cursor: pointer;
   border-radius: 3px;
-}
-
-button:hover {
-  filter: hue-rotate(220deg);
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
 }
 
 .Netplay {
@@ -168,13 +204,6 @@ button:hover {
 
 .Replays {
   background: url('../assets/buttons/title/replays-button.png');
-  filter: grayscale(1);
-  cursor: initial;
-}
-
-.Replays:hover {
-  filter: grayscale(1);
-  cursor: initial;
 }
 
 .Controls {
@@ -183,6 +212,31 @@ button:hover {
 
 .Settings {
   background: url('../assets/buttons/title/settings-button.png');
+}
+
+.VsPlayer {
+  background: url('../assets/buttons/offline/versus-player-button.png');
+}
+
+.VsCpu {
+  background: url('../assets/buttons/offline/versus-cpu-button.png');
+}
+
+.Training {
+  background: url('../assets/buttons/offline/training-button.png');
+}
+
+.Trials {
+  background: url('../assets/buttons/offline/trials-button.png');
+}
+
+.Menu button:hover {
+  filter: hue-rotate(220deg);
+}
+
+button.Disabled, button.Disabled:hover {
+  filter: grayscale(1);
+  cursor: initial;
 }
 
 p {
@@ -194,11 +248,9 @@ li {
 }
 
 .Info {
-  position: fixed;
-  bottom: 5px;
-  left: 0;
   width: 100%;
   font-weight: 100;
+  margin-bottom: 5px;
 }
 
 .Info h3 {
@@ -257,14 +309,15 @@ li {
 }
 
 .modal .close {
-  position: relative;
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   background: none;
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
   padding: 0;
-  margin: -15px -10px;
+  color: #fff;
+  font-size: 24px;
 }
 
 .modal .close .sr-only {
@@ -288,6 +341,15 @@ li {
   outline: none;
 }
 
+.modal .modal-body input:focus {
+  background: rgba(255,255,255,0.5);
+  color: #fff;
+}
+
+.modal .modal-body input::selection {
+  color: white;
+}
+
 .modal .modal-footer button {
   width: 300px;
   height: 40px;
@@ -298,15 +360,28 @@ li {
   background-color: #AA7000;
   font-weight: 500;
   text-transform: initial;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.modal .modal-footer button:first-child {
+  margin-top: 20px;
 }
 
 .modal .modal-footer button:last-child {
   background-color: #7289DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal .modal-footer button:last-child:hover {
   filter: none;
-  background-color: #3450b6;
+  background-color: #5f7bdf;
+}
+
+.modal .modal-footer button:last-child img{
+  height: 32px;
 }
 
 .modal-backdrop {
@@ -337,7 +412,6 @@ li {
 }
 
 .modal-dialog {
-  position: relative;
   width: 300px;
 }
 

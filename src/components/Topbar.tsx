@@ -47,7 +47,7 @@ const Topbar = () => {
                   </Modal.Body>
                   <Modal.Footer>
                       <button type="submit">Sign in</button>
-                      <button type="submit">Sign in with Discord</button>
+                      <button type="submit"><img src="../assets/buttons/Discord-LogoWordmark-White.png"/></button>
                   </Modal.Footer>
                 </Modal>
               </li>
